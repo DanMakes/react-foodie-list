@@ -37,8 +37,9 @@ const Login = () => {
             margin='normal'
           />
           <TextField
-            id='user-name'
-            label='Name'
+            id='password'
+            label='Password'
+            type='password'
             className={classes.textField}
             margin='normal'
           />
