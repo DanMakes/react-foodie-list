@@ -36,11 +36,17 @@ const useStyles = makeStyles(theme => ({
 
 const Login = () => {
   const classes = useStyles();
+
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log('Login');
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth='sm'>
-        <form className={classes.container}>
+        <form className={classes.container} onSubmit={onSubmit}>
           <h1 align='center'>Account Login</h1>
           <TextField
             id='user-name'
@@ -56,6 +62,7 @@ const Login = () => {
             margin='normal'
           />
           <Button
+            type='submit'
             color='primary'
             variant='contained'
             className={classes.button}
