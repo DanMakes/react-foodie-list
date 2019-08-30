@@ -5,22 +5,32 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignContent: 'center'
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 200
+    width: 300
   },
   dense: {
     marginTop: 19
   },
   menu: {
     width: 200
+  },
+  button: {
+    margin: theme.spacing(1),
+    width: 300
+  },
+  input: {
+    display: 'none'
   }
 }));
 
@@ -29,9 +39,9 @@ const Login = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth='md'>
+      <Container maxWidth='sm'>
         <form className={classes.container}>
-          <h1>Account Login</h1>
+          <h1 align='center'>Account Login</h1>
           <TextField
             id='user-name'
             label='Name'
@@ -45,6 +55,13 @@ const Login = () => {
             className={classes.textField}
             margin='normal'
           />
+          <Button
+            color='primary'
+            variant='contained'
+            className={classes.button}
+          >
+            Submit
+          </Button>
         </form>
       </Container>
     </React.Fragment>

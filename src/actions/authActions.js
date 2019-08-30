@@ -2,11 +2,16 @@ import { LOGIN_SUCCESS, LOGIN_FAIL } from './types';
 
 export const login = () => async dispatch => {
   try {
-    const data = {};
+    const res = {};
 
     dispatch({
       type: LOGIN_SUCCESS,
-      payload: data
+      payload: res.data
     });
-  } catch {}
+  } catch (err) {
+    dispatch({
+      type: LOGIN_FAIL,
+      payload: err.response.data.msg
+    });
+  }
 };
