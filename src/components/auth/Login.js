@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <CssBaseline />
       <Container maxWidth='sm'>
         <form className={classes.container} onSubmit={onSubmit}>
@@ -71,7 +71,7 @@ const Login = () => {
           </Button>
         </form>
       </Container>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

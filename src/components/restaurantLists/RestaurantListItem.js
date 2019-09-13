@@ -19,24 +19,16 @@ const useStyles = makeStyles({
   }
 });
 
-const RestaurantItem = ({ restaurant }) => {
+const RestaurantListItem = ({ restaurantList }) => {
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} component='h1'>
-          {restaurant.name}
-        </Typography>
-        <Typography className={classes.location} component='h2'>
-          Location: {restaurant.location}
-        </Typography>
-        <Typography className={classes.rating} component='h5'>
-          Rating: {restaurant.rating}
-        </Typography>
+        <Typography component='h1'>{restaurantList.title}</Typography>
       </CardContent>
     </Card>
   );
 };
 
-export default RestaurantItem;
+export default RestaurantListItem;
