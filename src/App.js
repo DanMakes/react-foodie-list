@@ -4,13 +4,14 @@ import store from './store';
 
 import NavBar from '../src/components/layout/Navbar';
 import Login from '../src/components/auth/Login';
+import Home from '../src/components/pages/Home';
 
 function App() {
   return (
     <Provider store={store}>
       <Fragment>
         <NavBar />
-        <Login />
+        <Home />
       </Fragment>
     </Provider>
   );
