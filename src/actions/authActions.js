@@ -1,8 +1,13 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL } from './types';
+import axios from 'axios';
 
+import { LOGIN_SUCCESS, LOGIN_FAIL, SET_LOADING } from './types';
+
+// Log in user
 export const login = () => async dispatch => {
   try {
-    const res = {};
+    setLoading();
+
+    const res = await axios.post('/api/auth');
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -14,4 +19,11 @@ export const login = () => async dispatch => {
       payload: err.response.data.msg
     });
   }
+};
+
+// Set loading to true
+export const setLoading = () => {
+  return {
+    type: SET_LOADING
+  };
 };

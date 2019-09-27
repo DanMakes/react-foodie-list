@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import RestaurantItem from './RestaurantItem';
 
 import { makeStyles } from '@material-ui/core/styles';

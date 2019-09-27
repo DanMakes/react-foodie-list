@@ -1,7 +1,11 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL } from '../actions/types';
+import { LOGIN_SUCCESS, LOGIN_FAIL, SET_LOADING } from '../actions/types';
 
 const initialState = {
-  isAthenticated: null
+  token: null,
+  isAthenticated: false,
+  user: null,
+  loading: false,
+  error: null
 };
 
 export default (state = initialState, action) => {
@@ -9,12 +13,19 @@ export default (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        isAthenticated: true
+        isAthenticated: true,
+        loading: false
       };
     case LOGIN_FAIL:
       return {
         ...state,
-        isAthenticated: false
+        isAthenticated: false,
+        loading: false
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true
       };
     default:
       return state;

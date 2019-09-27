@@ -7,6 +7,11 @@ import NavBar from '../src/components/layout/Navbar';
 import Login from '../src/components/auth/Login';
 import Home from '../src/components/pages/Home';
 import Lists from '../src/components/pages/Lists';
+import setAuthToken from './utils/setAuthToken';
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
   return (
