@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -6,6 +6,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+
+import { login } from '../../actions/authActions';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -37,8 +39,18 @@ const useStyles = makeStyles(theme => ({
 const Login = () => {
   const classes = useStyles();
 
+  const [user, setUser] = useState({
+    email: '',
+    password: ''
+  });
+  const { email, password } = user;
+
   const onSubmit = e => {
     e.preventDefault();
+    login({
+      email: user,
+      password
+    });
     console.log('Login');
   };
 
